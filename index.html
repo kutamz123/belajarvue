@@ -19,6 +19,10 @@
     img:hover {
         opacity: 0.5;
     }
+
+    .active {
+        background-color: aqua;
+    }
 </style>
 
 <body>
@@ -37,12 +41,24 @@
     <!-- 3. menampilkan data dengan if -->
     <!-- <div id="app-3">
         <span v-if="seen">ini adalah true</span>
+        <h3>Daftar belajar</h3>
+        <ol v-if="studies.length > 3">
+            <li v-for="study in studies">{{ study }}</li>
+        </ol>
+        <li v-else>Daftar belajar belum tersedia</li>
+        <h3>Isi daftar belajar</h3>
+        <input type="checkbox" value="belajar laravel" v-model="studies">belajar laravel
+        <input type="checkbox" value="belajar codeigniter" v-model="studies">belajar codeigniter
+        <input type="checkbox" value="belajar cakePHP" v-model="studies">belajar cakePHP
     </div> -->
 
     <!-- 4. menampilkan data dengan for -->
     <!-- <div id="app-4">
-        <ol>
-            <li v-for="study in studies">{{ study.text }}</li>
+        <ol> -->
+    <!-- array -->
+    <!-- <li v-for="(study, index) in studies">{{ [index] }} {{ study.text }}</li> -->
+    <!-- object -->
+    <!-- <li v-for="(study, value, index) in studies">{{ index }} - {{ value }} : {{ study }}</li>
         </ol>
     </div> -->
 
@@ -52,9 +68,14 @@
         <button v-on:click="reverseMessage">revearse message</button>
     </div> -->
 
-    <!-- 6. menampilkan data dengan form input -->
+    <!-- 6. menampilkan data dengan form input / two way data binding -->
     <!-- <div id="app-6">
+        <p>{{ message }}</p>
         <input type="text" v-model="message">
+        <p>{{ checkbox }}</p>
+        <input type="checkbox" v-model="checkbox" value="vue js">vue js
+        <input type="checkbox" v-model="checkbox" value="react js">react js
+        <input type="checkbox" v-model="checkbox" value="angular js">angular js
     </div> -->
 
     <!-- 7. menampilkan data dengan component di HTML-->
@@ -88,8 +109,7 @@
         <br>
         <img v-bind:src="gambar" class="rounded mx-auto d-block" alt="...">
         <br>
-        <img v-for="gambar in gambars" v-bind:src="gambar.text" class="img-thumbnail" alt="..."
-            v-on:click="changeImage">
+        <img v-for="gambar in gambars" v-bind:src="gambar" class="img-thumbnail" alt="..." v-on:click="changeImage">
     </div> -->
 
     <!-- 12. class binding -->
@@ -99,9 +119,36 @@
     </div> -->
 
     <!-- 13. latihan class binding  -->
-    <div id="app-13">
-        <button v-bind:class="{btn: menu === 'home'}">Home</button>
+    <!-- <div id="app-13">
+        <button v-bind:class="{active: menu === 'home'}" v-on:click="menu = 'home'">Home</button>
+        <button v-bind:class="{active: menu === 'profil'}" v-on:click="menu = 'profil'">Profil</button>
+        <button v-bind:class="{active: menu === 'contact'}" v-on:click="menu = 'contact'">Contact</button>
+    </div> -->
+
+    <!-- 14. directive v-show sama dengan directive v-if, tetapi v-show hanya menampilkan class display:none  -->
+    <!-- <div id="app-3">
+        <ol v-show="seen">
+        </ol>
+    </div> -->
+
+    <!-- 15. elemen template -->
+    <!-- <div id="app-15">
+        <template v-if="seen">
+            <h3>Daftar Belajar</h3>
+            <ol>
+                <li v-for="example in examples">{{ example }}</li>
+            </ol>
+        </template>
+    </div> -->
+
+    <!-- 16. v-else-if -->
+    <div id="app-16">
+        <li v-if="study === 'belajar vuejs'">belajar vuejs</li>
+        <li v-else-if="study === 'belajar reactjs'">belajar reactjs</li>
+        <li v-else-if="study === 'belajar angularjs'">belajar angularjs</li>
+        <li v-else="study">sudah selesai belajar</li>
     </div>
+
     <script type="text/javascript" src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
