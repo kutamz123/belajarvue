@@ -195,9 +195,73 @@
 
 // 16. v-else-if
 
+// var app = new Vue({
+//   el: "#app-16",
+//   data: {
+//     study: "belajar angularjs1",
+//   },
+// });
+
+// 17. ulasan event handling
+// var app = new Vue({
+//   el: "#app-17",
+//   data: {
+//     message: "Hi",
+//   },
+//   methods: {
+//     click: function () {
+//       alert(this.message);
+//     },
+//     action: function (action) {
+//       alert(action);
+//     },
+//   },
+// });
+
+// 18. penggunaan object event
+
+// var app = new Vue({
+//   el: "#app-18",
+//   data: {
+//     message: "home",
+//   },
+//   methods: {
+//     menu: function (data) {
+//       this.message = data;
+//     },
+//   },
+// });
+
+// 19. key modifiers
+
+// var app = new Vue({
+//   el: "#app-19",
+//   data: {
+//     newMenu: "",
+//     menus: ["HTML", "PHP", "CSS"],
+//   },
+//   methods: {
+//     addData: function () {
+//       this.menus.push(this.newMenu);
+//       this.newMenu = "";
+//     },
+//   },
+// });
+
+// 20. component
+// Vue.component("button-submit", {
+//   props: ["input"],
+//   template: "<button type='submit'> {{ input }} </button>",
+// });
+// var app = new Vue({
+//   el: "#app-20",
+//   data: {},
+// });
+
+Vue.component("footer-component", {
+  template: "<button type='submit'> asdsadsa </button>",
+});
 var app = new Vue({
-  el: "#app-16",
-  data: {
-    study: "belajar angularjs1",
-  },
+  el: "#app-21",
+  data: {},
 });
